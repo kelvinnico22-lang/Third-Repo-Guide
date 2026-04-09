@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KEL–TWEB Order Page</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Poppins, sans-serif;
+            background: #0d0d0d;
+            color: white;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background: #111;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: cyan;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            margin: 40px auto;
+            background: #151515;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #222;
+            color: white;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 10px;
+            background: cyan;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            background: #00e0ff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #003300;
+            border-left: 5px solid #00ff00;
+            color: #00ff00;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>KEL–TWEB ORDER PORTAL</header>
+
+<div class="container">
+    <h2>Place Your Order</h2>
+    <p>Fill the form below and your order will be sent to our email instantly.</p>
+
+    <!-- 🔥 Form that sends to your email -->
+    <form action="https://formsubmit.co/kelvinnico22@gmail.com" method="POST" id="orderForm">
+
+        <!-- Prevent spam -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Redirect to success message -->
+        <input type="hidden" name="_next" value="">
+
+        <input type="text" name="Full Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+        <input type="text" name="Phone" placeholder="Phone Number" required>
+        <textarea name="Order Details" rows="5" placeholder="Describe your order" required></textarea>
+
+        <button type="submit">Send Order</button>
+    </form>
+
+    <div class="success-message" id="successBox">
+        ✅ Your order has been sent successfully!
+    </div>
+</div>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function () {
+    setTimeout(() => {
+        document.getElementById("successBox").style.display = "block";
+    }, 500);
+});
+</script>
+</body>
+</html>
